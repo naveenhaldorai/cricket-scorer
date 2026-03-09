@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { Analytics } from "@vercel/analytics/react";
 
 const SAVE_KEY = "cricket_scorer_v1";
 const loadSaved = () => { try { const s = localStorage.getItem(SAVE_KEY); return s ? JSON.parse(s) : null; } catch { return null; } };
@@ -266,6 +267,7 @@ export default function App() {
         .coin-heads { background: radial-gradient(circle at 35% 30%, #fff5c0, #d4a017 45%, #8a6200 80%, #5a4000); box-shadow: inset -6px -6px 14px rgba(0,0,0,0.5), inset 4px 4px 10px rgba(255,255,200,0.4), 0 0 30px #f0b42966; border: 3px solid #c8920044; }
         .coin-tails { background: radial-gradient(circle at 65% 30%, #fff5c0, #d4a017 45%, #8a6200 80%, #5a4000); box-shadow: inset 6px -6px 14px rgba(0,0,0,0.5), inset -4px 4px 10px rgba(255,255,200,0.4), 0 0 30px #f0b42966; border: 3px solid #c8920044; transform: rotateY(180deg); }
       `}</style>
+      <Analytics />
     </div>
   );
 }
